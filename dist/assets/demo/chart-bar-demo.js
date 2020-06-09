@@ -2,40 +2,48 @@
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
-// Bar Chart Example
-var ctx = document.getElementById("myBarChart");
+// Area Chart Example
+var ctx = document.getElementById("myAreaChart1");
 var myLineChart = new Chart(ctx, {
-  type: 'bar',
+  type: 'line',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["Congelatore 1", "Congelatore 2", "Congelatore 3", "Congelatore 4", "Congelatore 5", "Congelatore 6", "Congelatore 7", "Congelatore 8"],
     datasets: [{
-      label: "Revenue",
-      backgroundColor: "rgba(2,117,216,1)",
+      label: "Temperatura",
+      lineTension: 0.3,
+      backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
+      pointRadius: 5,
+      pointBackgroundColor: "rgba(2,117,216,1)",
+      pointBorderColor: "rgba(255,255,255,0.8)",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "rgba(2,117,216,1)",
+      pointHitRadius: 25,
+      pointBorderWidth: 2,
+      data: [-20, -21, -23, -22, -21, -11, -21, -24],
     }],
   },
   options: {
     scales: {
       xAxes: [{
         time: {
-          unit: 'month'
+          unit: 'date'
         },
         gridLines: {
           display: false
         },
         ticks: {
-          maxTicksLimit: 6
+          maxTicksLimit: 8
         }
       }],
       yAxes: [{
         ticks: {
-          min: 0,
-          max: 15000,
+          min: -30,
+          max: 4,
           maxTicksLimit: 5
         },
         gridLines: {
-          display: true
+          color: "rgba(0, 0, 0, .125)",
         }
       }],
     },
