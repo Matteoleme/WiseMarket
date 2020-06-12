@@ -20,7 +20,7 @@
 	//se le credenziali sono giuste
 	if($row = $result->fetch_assoc()){
 		echo '<script type="text/javascript">
-	    alert("Benvenuto ' . $username . ')
+	    alert("Benvenuto ' . $username . '")
 	    window.location.href = "index.php"
         </script>';
 	}
