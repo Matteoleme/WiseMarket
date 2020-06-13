@@ -26,14 +26,14 @@
 	    	window.location.href = "index.php"
         	</script>';
 		}
-		//mostra solo pagina temperature
+		//mostra la pagina temperature
 		else if ($username=='temperatura') {
 			echo '<script type="text/javascript">
 	    	alert("Benvenuto ' . $username . '")
 	    	window.location.href = "charts.html"
         	</script>';
 		}
-		//mostra solo pagina prodotti
+		//mostra la pagina prodotti
 		else{
 			echo '<script type="text/javascript">
 	    	alert("Benvenuto ' . $username . '")
