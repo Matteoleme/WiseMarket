@@ -19,16 +19,34 @@
 	
 	//se le credenziali sono giuste
 	if($row = $result->fetch_assoc()){
-		echo '<script type="text/javascript">
-	    alert("Benvenuto ' . $username . '")
-	    window.location.href = "index.php"
-        </script>';
+		//admin mostra la dashboard completa
+		if ($username=='admin') {
+			echo '<script type="text/javascript">
+	    	alert("Benvenuto ' . $username . '")
+	    	window.location.href = "index.php"
+        	</script>';
+		}
+		//mostra solo pagina temperature
+		else if ($username=='temperatura') {
+			echo '<script type="text/javascript">
+	    	alert("Benvenuto ' . $username . '")
+	    	window.location.href = "charts.html"
+        	</script>';
+		}
+		//mostra solo pagina prodotti
+		else{
+			echo '<script type="text/javascript">
+	    	alert("Benvenuto ' . $username . '")
+	    	window.location.href = "tables.html"
+        	</script>';
+		}
+		
 	}
 	//altrimenti se sono sbagliate
 	else
 	{
         echo '<script type="text/javascript">
-	    alert("Errore! Utente' . $username . ' non valido")
+	    alert("Errore! Utente ' . $username . ' non valido")
 	    window.location.href = "login.html"
         </script>';
 	}
